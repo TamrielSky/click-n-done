@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title-ios" text-center>Picture</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<img [src]="'data:image/jpeg;base64,'+this.image" class="picture" />
+	<ion-list *ngIf="(this.feature == 'TEXT_DETECTION' || this.feature == 'DOCUMENT_TEXT_DETECTION') && this.result ">
+        <ion-item><ion-label>I think this image contains following text:</ion-label></ion-item>
+        <ion-item lines="none"><ion-label>Text </ion-label>{{this.result[0].description}}</ion-item>
+    </ion-list>
+    <ion-list *ngIf = "!this.result">
+        <ion-item lines="none"><ion-label text-center>Didn't found any related data</ion-label></ion-item>
+  </ion-list>
+</ion-content>

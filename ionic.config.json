@@ -1,5 +1,7 @@
 {
   "name": "click-n-done",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
