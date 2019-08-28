@@ -20,6 +20,10 @@ export class HomePage {
   	public loadingController: LoadingController
   ) {}
 
+  ionViewDidEnter() {
+    this.takePhoto();
+  }
+
   async takePhoto() {
   	const options: CameraOptions = {
   		quality: 100,

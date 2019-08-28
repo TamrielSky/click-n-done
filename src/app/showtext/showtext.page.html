@@ -16,4 +16,9 @@
     <ion-list *ngIf = "!this.result">
         <ion-item lines="none"><ion-label text-center>Didn't found any related data</ion-label></ion-item>
   </ion-list>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="saveLead()">
+        <ion-icon name="cloud-done"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
 </ion-content>
