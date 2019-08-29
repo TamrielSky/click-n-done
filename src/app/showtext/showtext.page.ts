@@ -30,14 +30,6 @@ constructor(
   ) {}
 ​
   ngOnInit() {
-  	// this.route.queryParams.subscribe(params => {
-      //     if (params && params.special && params.result && params.feature ) {
-      //         this.image = JSON.parse(params.special);
-      //         this.result = JSON.parse(params.result);
-      //         this.feature = JSON.parse(params.feature);
-      //     }
-      //     this.result = this.result.responses[0].textAnnotations
-      // });
       this.route.queryParams.subscribe(params => {
           if (params && params.result) {
               this.result = JSON.parse(params.result);
@@ -70,17 +62,9 @@ constructor(
 
       await loading.present();
 
+      console.log("detected zipcode - ", this.zip);
       this.web2lead.saveLead("00D3i000000uxFu",this.firstName, this.lastName, this.company, this.phone, this.state, this.street,this.zip, this.country, this.city, this.email).subscribe(async (result) => {
 
-        /*
-        let navigationExtras: NavigationExtras = {
-          queryParams: {
-            special: JSON.stringify(imageData),
-            result : JSON.stringify(result.json()),
-            feature : JSON.stringify("TEXT_DETECTION")
-          }
-        };
-        */
         this.router.navigate(["createsuccess"])
         await loading.dismiss()
       }, err => {

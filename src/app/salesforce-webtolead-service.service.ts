@@ -11,6 +11,9 @@ export class SalesforceWebtoleadServiceService {
   constructor(public http: Http) { }
 
   	saveLead(oid,first_name,last_name, company, phone, state, street, zipcode, country, city, email) {
+		
+		console.log("posted zipcode - ", zipcode);	
+
 		const body = {
 			"oid": oid,
 			"first_name": first_name,
@@ -19,7 +22,7 @@ export class SalesforceWebtoleadServiceService {
 			"phone": phone,
 			"state": state,
 			"street": street,
-			"zipcode": zipcode,
+			"zip": zipcode,
 			"country": country,
 			"city": city,
 			"email": email
