@@ -1,24 +1,53 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
+      <ion-back-button defaultHref="showtext"></ion-back-button>
     </ion-buttons>
-    <ion-title class="title-ios" text-center>Picture</ion-title>
+    <ion-title class="title-ios" text-center>Lead Info</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-	<img [src]="'data:image/jpeg;base64,'+this.image" class="picture" />
-	<ion-list *ngIf="(this.feature == 'TEXT_DETECTION' || this.feature == 'DOCUMENT_TEXT_DETECTION') && this.result ">
-        <ion-item><ion-label>I think this image contains following text:</ion-label></ion-item>
-        <ion-item lines="none"><ion-label>Text </ion-label>{{this.result[0].description}}</ion-item>
-    </ion-list>
-    <ion-list *ngIf = "!this.result">
-        <ion-item lines="none"><ion-label text-center>Didn't found any related data</ion-label></ion-item>
+  <!-- <form> -->
+  <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    <ion-item>
+      <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text" [(ngModel)]="this.firstName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text" [(ngModel)]="this.lastName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Company </ion-label>
+      <ion-input type="text" [(ngModel)]="this.company"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Email </ion-label>
+      <ion-input type="text" [(ngModel)]="this.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Address</ion-label>
+      <ion-input placeholder="Street" [(ngModel)]="this.street"></ion-input>
+      <ion-input placeholder="City" [(ngModel)]="this.city"></ion-input>
+      <ion-input placeholder="State" [(ngModel)]="this.state"></ion-input>
+      <ion-input placeholder="Country" [(ngModel)]="this.country"></ion-input>
+      <ion-input placeholder="Zip Code" [(ngModel)]="this.zip"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Personal Info</ion-label>
+      <ion-input placeholder="Phone" [(ngModel)]="this.phone"></ion-input>
+      <ion-input placeholder="Website" [(ngModel)]="this.website"></ion-input>
+    </ion-item>
   </ion-list>
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="saveLead()">
-        <ion-icon name="cloud-done"></ion-icon>
-      </ion-fab-button>
-  </ion-fab>
+
+  <div class="ion-padding">
+    <ion-button expand="block" (click)="saveLead()" class="ion-no-margin">Confirm</ion-button>
+  </div>
+  <!-- </form> -->
 </ion-content>
