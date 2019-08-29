@@ -18,8 +18,7 @@ export class GoogleNlpService {
       encodingType: encodingType
     };
     const url = 'https://guarded-taiga-28378.herokuapp.com/nlpServer?name='+content;
-    // return this.http.post(url, body);
     return this.http.get(url);
-}
+  }
 	
 }
