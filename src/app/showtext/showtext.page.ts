@@ -102,6 +102,7 @@ constructor(
   }
 
   async saveLead() {
+    event.preventDefault();
     console.log("before posting lead to salesforce");
     const loading = await this.loadingController.create({
         message: 'Saving Lead...',
@@ -110,9 +111,9 @@ constructor(
 
       await loading.present();
 
-      
+      console.log(this.firstName);
       this.web2lead.saveLead("00D3i000000v9Fx",this.firstName, this.lastName, this.company, this.phone, this.state, this.street,this.zip, this.country, this.city, this.email).subscribe(async (result) => {
-        console.log(result.json())
+
         /*
         let navigationExtras: NavigationExtras = {
           queryParams: {
@@ -130,8 +131,8 @@ constructor(
 
   }
 
-  processForm(event) {
-    event.preventDefault();
-    this.saveLead();
-  }
+  // processForm(event) {
+  //   event.preventDefault();
+  //   this.saveLead();
+  // }
 }

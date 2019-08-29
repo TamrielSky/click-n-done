@@ -21,7 +21,11 @@ export class HomePage {
   	private route : Router,
   	public loadingController: LoadingController
   ) {}
-​
+
+  ionViewDidEnter() {
+    this.takePhoto();
+  }
+
   async takePhoto() {
   	const options: CameraOptions = {
   		quality: 100,
@@ -52,7 +56,6 @@ export class HomePage {
         // };
         let content = result.json().responses[0].textAnnotations.description;
         this.googleNLP.getContent("PLAIN_TEXT", content, "UTF8").subscribe((result)=>{
-            console.log("json", result.json().FirstName);
                 let navigationExtras: NavigationExtras = {
                     queryParams: {
                         result : JSON.stringify(result.json())
