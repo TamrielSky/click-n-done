@@ -26,47 +26,47 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <form>
-    <ion-list lines="full" class="ion-no-margin ion-no-padding">
-      <ion-item>
-        <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleFirstNameValue(event)" value="{{this.firstName}}"></ion-input>
-      </ion-item>
+  <!-- <form> -->
+  <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    <ion-item>
+      <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text" [(ngModel)]="this.firstName"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleLastNameValue(event)" value="{{this.lastName}}"></ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text" [(ngModel)]="this.lastName"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked">Company </ion-label>
-        <ion-input type="text" value="{{this.company}}" oninput="handleCompanyName(event)"></ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Company </ion-label>
+      <ion-input type="text" [(ngModel)]="this.company"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked">Email </ion-label>
-        <ion-input type="text" value="{{this.email}}" oninput="handleEmailAddress(event)"></ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Email </ion-label>
+      <ion-input type="text" [(ngModel)]="this.email"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked">Address</ion-label>
-        <ion-input placeholder="Street" oninput="handleStreet(event)" value="{{this.street}}"></ion-input>
-        <ion-input placeholder="City" oninput="handleCity(event)" value="{{this.city}}"></ion-input>
-        <ion-input placeholder="State" oninput="handleState(event)" value="{{this.state}}"></ion-input>
-        <ion-input placeholder="Country" oninput="handleCountry(event)" value="{{this.country}}"></ion-input>
-        <ion-input placeholder="Zip Code" oninput="handleZip(event)" value="{{this.zip}}"></ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Address</ion-label>
+      <ion-input placeholder="Street" [(ngModel)]="this.street"></ion-input>
+      <ion-input placeholder="City" [(ngModel)]="this.city"></ion-input>
+      <ion-input placeholder="State" [(ngModel)]="this.state"></ion-input>
+      <ion-input placeholder="Country" [(ngModel)]="this.country"></ion-input>
+      <ion-input placeholder="Zip Code" [(ngModel)]="this.zip"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked">Personal Info</ion-label>
-        <ion-input placeholder="Phone" oninput="handlePhone(event)" value="{{this.phone}}"></ion-input>
-        <ion-input placeholder="Website" oninput="handleWebsite(event)" value="{{this.website}}"></ion-input>
-      </ion-item>
-    </ion-list>
+    <ion-item>
+      <ion-label position="stacked">Personal Info</ion-label>
+      <ion-input placeholder="Phone" [(ngModel)]="this.phone"></ion-input>
+      <ion-input placeholder="Website" [(ngModel)]="this.website"></ion-input>
+    </ion-item>
+  </ion-list>
 
-    <div class="ion-padding">
-      <ion-button expand="block" (click)="saveLead()" class="ion-no-margin">Confirm</ion-button>
-    </div>
-  </form>
+  <div class="ion-padding">
+    <ion-button expand="block" (click)="saveLead()" class="ion-no-margin">Confirm</ion-button>
+  </div>
+  <!-- </form> -->
 </ion-content>
 

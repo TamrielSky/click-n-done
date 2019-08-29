@@ -60,47 +60,6 @@ constructor(
     this.website = this.result.Website;
   }
 
-  handleFirstNameValue(event) {
-    this.firstName = event.target.value;
-  }
-
-  handleLastNameValue(event) {
-    this.lastName = event.target.value;
-  }
-
-  handleEmailAddress(event) {
-    this.email = event.target.value;
-  }
-
-  handleCompanyName(event) {
-    this.company = event.target.value;
-  }
-
-  handleStreet(event) {
-    this.street = event.target.value;
-  }
-
-  handleCity(event) {
-    this.city = event.target.value;
-  }
-
-  handleState(event) {
-    this.state = event.target.value;
-  }
-
-  handleCountry(event) {
-    this.country = event.target.value;
-  }
-  handleZip(event) {
-    this.zip = event.target.value;
-  }
-  handlePhone(event) {
-    this.phone = event.target.value;
-  }
-  handleWebsite(event) {
-    this.website = event.target.value;
-  }
-
   async saveLead() {
     event.preventDefault();
     console.log("before posting lead to salesforce");
@@ -112,6 +71,8 @@ constructor(
       await loading.present();
 
       console.log(this.firstName);
+      console.log(this.lastName);
+      console.log(this.email);
       this.web2lead.saveLead("00D3i000000v9Fx",this.firstName, this.lastName, this.company, this.phone, this.state, this.street,this.zip, this.country, this.city, this.email).subscribe(async (result) => {
 
         /*
@@ -130,9 +91,4 @@ constructor(
       });
 
   }
-
-  // processForm(event) {
-  //   event.preventDefault();
-  //   this.saveLead();
-  // }
 }
