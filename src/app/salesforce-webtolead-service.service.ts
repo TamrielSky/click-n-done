@@ -24,7 +24,7 @@ export class SalesforceWebtoleadServiceService {
 			"city": city,
 			"email": email
 		}
-		return this.http.post('http://rbalasubr-ltm1.internal.salesforce.com:8080/convertToSalesforceLead', body);
+		return this.http.post('https://guarded-taiga-28378.herokuapp.com/convertToSalesforceLead', body);
 	}
 	
 }
