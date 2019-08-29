@@ -47,17 +47,17 @@ constructor(
   }
 
   getIntializeData() {
-    this.firstName = this.result.FirstName;
-    this.lastName = this.result.LastName;
-    this.email = this.result.Email;
-    this.company = this.result.Company;
-    this.city = this.result.City;
-    this.state = this.result.State;
-    this.country = this.result.Country;
-    this.street = this.result.Street;
-    this.zip = this.result.Zip;
-    this.phone = this.result.Phone;
-    this.website = this.result.Website;
+    this.firstName = this.result.first_name;
+    this.lastName = this.result.last_name;
+    this.email = this.result.email;
+    this.company = this.result.company;
+    this.city = this.result.city;
+    this.state = this.result.state;
+    this.country = this.result.country;
+    this.street = this.result.street;
+    this.zip = this.result.zip;
+    this.phone = this.result.phone;
+    this.website = this.result.website;
   }
 
   async saveLead() {
@@ -70,9 +70,6 @@ constructor(
 
       await loading.present();
 
-      console.log(this.firstName);
-      console.log(this.lastName);
-      console.log(this.email);
       this.web2lead.saveLead("00D3i000000v9Fx",this.firstName, this.lastName, this.company, this.phone, this.state, this.street,this.zip, this.country, this.city, this.email).subscribe(async (result) => {
 
         /*
