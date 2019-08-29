@@ -54,7 +54,9 @@ export class HomePage {
         //     feature : JSON.stringify("TEXT_DETECTION")
         //   }
         // };
-        let content = result.json().responses[0].textAnnotations.description;
+        console.log("vision api result is - ", result.text());
+        let content = result.json().responses[0].textAnnotations[0].description;
+        console.log("content is", content);
         this.googleNLP.getContent("PLAIN_TEXT", content, "UTF8").subscribe((result)=>{
                 let navigationExtras: NavigationExtras = {
                     queryParams: {

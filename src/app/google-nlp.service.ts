@@ -10,14 +10,9 @@ export class GoogleNlpService {
   constructor(public http: Http) { }
 
   getContent(type, content, encodingType) {
-    const body = {
-      document:{
-        type: type,
-        content: content
-      },
-      encodingType: encodingType
-    };
-    const url = 'https://guarded-taiga-28378.herokuapp.com/nlpServer?name='+content;
+    console.log("nlpserver api called for content", content);
+    
+    const url = 'https://guarded-taiga-28378.herokuapp.com/nlpServer?name='+encodeURIComponent(content);
     return this.http.get(url);
   }
 	
