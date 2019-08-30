@@ -26,6 +26,10 @@ export class HomePage {
     this.takePhoto();
   }
 
+  async openSettings() {
+    this.route.navigate(["settings"]);
+  }
+  
   async takePhoto() {
   	const options: CameraOptions = {
   		quality: 100,

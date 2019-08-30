@@ -27,6 +27,7 @@ export class SalesforceWebtoleadServiceService {
 			"city": city,
 			"email": email
 		}
+		console.log(body);
 		return this.http.post('https://guarded-taiga-28378.herokuapp.com/convertToSalesforceLead', body);
 	}
 	

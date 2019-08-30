@@ -12,7 +12,7 @@ export class GoogleNlpService {
   getContent(type, content, encodingType) {
     console.log("nlpserver api called for content", content);
     
-    const url = 'https://guarded-taiga-28378.herokuapp.com/nlpServer?name='+encodeURIComponent(content);
+    const url = 'https://guarded-taiga-28378.herokuapp.com/nlpServer?text='+encodeURIComponent(content);
     return this.http.get(url);
   }
 	

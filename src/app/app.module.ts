@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { IonicStorageModule } from '@ionic/storage';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -17,7 +19,7 @@ import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, HttpModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, HttpModule, IonicModule.forRoot(), IonicStorageModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,

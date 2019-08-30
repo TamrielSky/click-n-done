@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SalesforceWebtoleadServiceService } from '../salesforce-webtolead-service.service';
 import { LoadingController } from '@ionic/angular';
-​
+​import { Storage } from '@ionic/storage';
+
 @Component({
   selector: 'app-showtext',
   templateUrl: './showtext.page.html',
@@ -26,7 +27,8 @@ constructor(
   private route: ActivatedRoute, 
   private router: Router,
   private web2lead: SalesforceWebtoleadServiceService,
-  public loadingController: LoadingController
+  public loadingController: LoadingController,
+  private storage: Storage
   ) {}
 ​
   ngOnInit() {
@@ -63,13 +65,18 @@ constructor(
       await loading.present();
 
       console.log("detected zipcode - ", this.zip);
-      this.web2lead.saveLead("00D3i000000uxFu",this.firstName, this.lastName, this.company, this.phone, this.state, this.street,this.zip, this.country, this.city, this.email).subscribe(async (result) => {
 
-        this.router.navigate(["createsuccess"])
-        await loading.dismiss()
-      }, err => {
-        console.log(err);
+      this.storage.get('orgId').then((orgId) => {
+        this.web2lead.saveLead(orgId,this.firstName, this.lastName, this.company, this.phone, this.state, this.street,this.zip, this.country, this.city, this.email).subscribe(async (result) => {
+
+          this.router.navigate(["createsuccess"])
+          await loading.dismiss()
+        }, err => {
+          console.log(err);
+        });
+  
       });
+  
 
   }
 }
