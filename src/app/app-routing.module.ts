@@ -6,10 +6,7 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   { path: 'showtext', loadChildren: './showtext/showtext.module#ShowtextPageModule' },
   { path: 'createsuccess', loadChildren: './createsuccess/createsuccess.module#CreatesuccessPageModule' },
-<<<<<<< HEAD
-=======
   { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule' },
->>>>>>> click-and-done/rbalasubramanian
 ];
 
 @NgModule({

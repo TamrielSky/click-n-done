@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title text-center>
-      Scan Card
+      Business Card Scanner
     </ion-title>
 
     <ion-buttons slot="primary">
@@ -9,7 +9,12 @@
         <ion-icon name="settings"></ion-icon>      
       </ion-button>
     </ion-buttons>
-  
+    <ion-buttons slot="secondary">
+      <ion-button color="secondary" (click)="takePhoto()">
+        <ion-icon name="settings"></ion-icon>      
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
